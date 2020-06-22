@@ -1,24 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
 function App() {
+  var features = [];
+  // Add some features
+  var config = {
+    containerID: "GenomeBrowser",
+    baseUrl: "../",
+    refSeqs: {
+      url:
+        "https://s3.amazonaws.com/1000genomes/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa.fai",
+    },
+    tracks: [
+      {
+        key: "GRCH38 Reference Sequence",
+        label: "GRCH38 Reference Sequence",
+        urlTemplate:
+          "https://s3.amazonaws.com/1000genomes/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa",
+      },
+    ],
+    includes: null,
+  };
+
+  // Add to the config or tracks
+
+  // Instantiate JBrowse
+  window.addEventListener("load", () => {
+    window.JBrowse = new window.Browser(config);
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        Custom JBrowse Embedded in a <code>div</code>
+      </h1>
+      <div
+        style={{ width: "100%", height: 800 }}
+        className="jbrowse"
+        id="GenomeBrowser"
+      >
+        <div id="LoadingScreen">
+          <h1>Loading...</h1>
+        </div>
+      </div>
     </div>
   );
 }
