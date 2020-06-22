@@ -17,6 +17,11 @@ function App() {
         urlTemplate:
           "https://s3.amazonaws.com/1000genomes/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa",
       },
+      {
+        label: "NCBI genes",
+        urlTemplate:
+          "https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/ncbi_refseq/GCA_000001405.15_GRCh38_full_analysis_set.refseq_annotation.sorted.gff.gz",
+      },
     ],
     includes: null,
   };
