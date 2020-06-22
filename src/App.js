@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <h1>
-        Custom JBrowse Embedded in a <code>div</code>
+        Custom JBrowse Embedded in a <code>div</code> in create-react-app
       </h1>
       <div
         style={{ width: "100%", height: 800 }}
