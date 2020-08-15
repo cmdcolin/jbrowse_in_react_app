@@ -5,7 +5,6 @@ function App() {
   // Add some features
   var config = {
     containerID: "GenomeBrowser",
-    baseUrl: "../",
     refSeqs: {
       url:
         "https://s3.amazonaws.com/1000genomes/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa.fai",
